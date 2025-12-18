@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sberbusiness/icons-next": "^1.6.0",
-    "@sberbusiness/triplex-next": "^1.4.0",
+    "@sberbusiness/icons-next": "^1.8.0",
+    "@sberbusiness/triplex-next": "^1.6.1",
     "@tot/ui-kit": "git+ssh://git@github.com/RaufERK/tot-ui-kit.git",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
