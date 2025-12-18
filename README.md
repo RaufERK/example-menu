@@ -1,49 +1,31 @@
-# `example-menu`
-
-Мини-приложение на React + Vite, показывающее, как использовать общий пакет `@data-platform/ui-shell` в отдельном проекте (можно вынести в другой репозиторий).
-
-## Как запустить
-
-```bash
-yarn install          # один раз в корне монорепы
-yarn workspace example-menu dev
-```
-
-По умолчанию меню тянет данные с `http://localhost:4000/idp/single-menu-data/VKIIw4zpK-wnEuFag4GXO`. Можно переопределить URL:
-
-```bash
-VITE_API_BASE=https://prod.api yarn workspace example-menu dev
-```
-
-## Как это повторить в другом репозитории
-
-1. Установить пакет, опубликованный в приватном реестре:  
-   `yarn add @data-platform/ui-shell`
-2. В компоненте приложения:
-
-```tsx
-import { Layout } from '@data-platform/ui-shell'
-
-const apiBase = import.meta.env.VITE_API_BASE ?? 'https://api.example.com'
-
-export const App = () => (
-  <Layout
-    menuProps={{
-      baseUrl: apiBase,
-      activeAppId: 'example',
-      systemTitle: 'Example Platform',
-    }}
-  >
-    {/* контент */}
-  </Layout>
-)
-```
-
-Можно вместо `baseUrl` передать готовый массив приложений через `menuProps.apps`.
-
-## Зачем проект
-
-- Демонстрирует, что общий Layout/Menu живут отдельно от `new-frontend`.
-- Показывает коллегам минимальный набор шагов для интеграции.
-- Использует Yarn workspaces, поэтому отражает реальную локальную разработку.
 # example-menu
+
+Мини-пример использования `@tot/ui-kit` (Layout + меню) на Vite.
+
+## Запуск
+```bash
+npm install
+npm run dev
+```
+
+## Обновить либу @tot/ui-kit
+```bash
+npm run update
+```
+Скрипт билдит соседний `../tot-ui-kit` и ставит свежую версию из Git с `--force`.
+
+## Тема и цвета
+- Либа хранит тему в `localStorage` (`tot-ui-kit-theme`) и ставит атрибут `data-theme="light" | "dark"` на `html`.
+- Все цвета приходят из triplex-токенов и переопределений в `@tot/ui-kit/src/global.css`.
+- Цвет тёмной темы завязан на `--triplex-next-DropdownMobileList-Active_Background-1-5-0` (fallback `#1e2330`) и используется для фона меню и страницы.
+- Текущая тема в коде:
+  ```tsx
+  import { useTheme } from '@tot/ui-kit'
+
+  const theme = useTheme() // 'light' | 'dark'
+  ```
+
+## Где править
+- Основные стили темы: `tot-ui-kit/src/global.css`
+- Цвета меню: `tot-ui-kit/src/components/MainMenu/MainMenu.css`
+- Цвет фона layout: `tot-ui-kit/src/components/Layout/styles.css`
