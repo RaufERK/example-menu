@@ -50,6 +50,8 @@ const App = () => {
         activeAppId: 'test-1',
         systemTitle: 'Test Shell',
       }}
+      menuBackgroundColor='#3B4750'
+      pageBackgroundColor='#3B4750'
     >
       <div style={{ padding: 32, maxWidth: 960 }}>
         <div>
