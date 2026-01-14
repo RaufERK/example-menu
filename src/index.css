@@ -3,8 +3,8 @@
     'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0b1f33;
-  background-color: #f4f6fa;
+  color: var(--triplex-next-Typography-Primary_Color-1-9-0, #1f1f22);
+  background-color: var(--triplex-next-ColorNeutral-90-1-9-0, #f2f4f7);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,7 +20,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #f4f6fa;
+  background-color: var(--triplex-next-ColorNeutral-90-1-9-0, #f2f4f7);
 }
 
 #root {
